@@ -1,0 +1,8 @@
+packages {
+  sway swaybg waybar rofi-wayland 
+  kitty brightnessctl pactl grim 
+  slurp mako-notifier wl-clipboard 
+  libglib2.0-bin network-manager-gnome 
+  polkit-gnome thunar 
+  fonts-font-awesome fonts-jetbrains-mono
+}
