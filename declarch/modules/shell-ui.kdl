@@ -1,0 +1,15 @@
+// ~/.config/declarch/modules/shell-ui.decl
+
+packages {
+    // --- Standard UI (Fallback) ---
+    waybar                  // default Status bar
+    rofi                    // Launcher
+    swaync                  // Notification Center
+    
+    // --- Advanced Shells (Noctalia / DMS) ---
+    // Required if you want to use noctalia/dms/caelestia or other shell
+    quickshell-git          
+    
+    // Optional dependencies for DankMaterialShell integration
+    python-material-color-utilities-git
+}

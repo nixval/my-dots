@@ -1,0 +1,23 @@
+// declarch configuration
+// Created for host: valiE
+
+// Import other module files (optional)
+imports {
+    "modules/base.kdl"
+    "modules/hyprland.kdl"
+    "modules/shell-ui.kdl"
+    "modules/niri.kdl"
+    "modules/mango.kdl"
+    "modules/waybridge.kdl"
+}
+
+packages {
+    // Add packages here
+    git
+    vim
+    // flatpak:obsidian
+}
+
+excludes {
+    // Add packages to exclude
+}

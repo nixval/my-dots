@@ -1,0 +1,116 @@
+// -----------------------------------------------------
+// --- Niri Keybinds
+// -----------------------------------------------------
+// [INFO] This file is designed for consistency with the main
+// Hyprland/Sway dotfiles.
+// [CITE] wm/niri-wiki/Configuration:-Key-Bindings.md
+// -----------------------------------------------------
+
+binds {
+    // -----------------------------------------------------
+    // --- Core Application Binds (Defaults/Fallbacks)
+    // -----------------------------------------------------
+    // [INFO] These are hardcoded as Niri doesn't use shell variables
+    // in its config. We use the same keymap as our other configs.
+
+    // [Apps]
+    Mod+"T" { spawn "kitty"; }
+    Mod+"E" { spawn "yazi"; }
+    Mod+"B" { spawn "firefox"; }
+
+    // [Launchers]
+    Mod+"D" { spawn "rofi -show drun"; }
+    Mod+Shift+"D" { spawn "rofi -show run"; }
+
+    // [System]
+    Mod+"Q" { ipc-cmd "close-window"; }
+    Mod+Shift+"E" { ipc-cmd "logout"; }
+    Mod+"L" { spawn "hyprlock"; }
+    Mod+"R" { ipc-cmd "reload-config"; }
+
+    // [Clipboard]
+    Mod+"V" { spawn "cliphist list | rofi -dmenu | cliphist decode | wl-copy"; }
+
+    // [Wallpaper (Fallback)]
+    Mod+"W" { spawn "swaybg -i /path/to/wall.png"; }
+    Mod+Shift+"W" { spawn "swaybg -i /path/to/wall.png"; }
+
+    // [Overview]
+    // [INFO] Niri's native overview toggle.
+    Mod+"A" { ipc-cmd "toggle-overview"; }
+
+
+    // -----------------------------------------------------
+    // --- [ACTION] External Shell IPC Overrides
+    // -----------------------------------------------------
+    // [INFO] If you run DMS or Noctalia *on top of* Niri,
+    // uncomment the appropriate block below. This is UNCOMMON
+    // but supported for consistency.
+
+    /*
+    // --- DMS Overrides ---
+    
+    Mod+"D" { spawn "dms ipc call launcher toggle"; }
+    Mod+"A" { spawn "dms ipc call dank toggle_overview"; }
+    Mod+"R" { spawn "dms ipc call dank reload_style"; }
+    Mod+Shift+"E" { spawn "dms ipc call dank exit"; }
+    */
+
+    /*
+    // --- Noctalia Overrides ---
+   
+    Mod+"D" { spawn "qs -c noctalia-shell ipc call launcher toggle"; }
+    Mod+"W" { spawn "qs -c noctalia-shell ipc call wallpaper toggle"; }
+    Mod+"V" { spawn "qs -c noctalia-shell ipc call launcher clipboard"; }
+    Mod+"L" { spawn "qs -c noctalia-shell ipc call lockScreen lock"; }
+    Mod+Shift+"E" { spawn "qs -c noctalia-shell ipc call sessionMenu toggle"; }
+    */
+
+    // -----------------------------------------------------
+    // --- Window & Layout Management
+    // -----------------------------------------------------
+
+    // [INFO] Use Mod+Space for floating, a common key.
+    Mod+"Space" { ipc-cmd "toggle-floating"; }
+
+    // [INFO] Use Niri's native fullscreen.
+    Mod+"F" { ipc-cmd "toggle-fullscreen"; }
+    
+    // [INFO] Use Niri's native column width controls
+    Mod+"BracketLeft" { ipc-cmd "set-column-width" "-10%"; }
+    Mod+"BracketRight" { ipc-cmd "set-column-width" "+10%"; }
+
+    // [INFO] Mimic Hyprland/Sway tabbed mode (Niri calls this "stack")
+    Mod+"T" { ipc-cmd "toggle-stacked"; }
+
+    // -----------------------------------------------------
+    // --- Hardware Keys (Volume & Brightness)
+    // -----------------------------------------------------
+
+    // [INFO] Standard XF86 keys
+    "XF86AudioRaiseVolume" { spawn "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"; }
+    "XF86AudioLowerVolume" { spawn "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"; }
+    "XF86AudioMute" { spawn "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    "XF86MonBrightnessUp" { spawn "brightnessctl set +5%"; }
+    "XF86MonBrightnessDown" { spawn "brightnessctl set 5%-"; }
+
+    // [INFO] Fallback binds for all keyboards
+    Mod+"Equal" { spawn "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"; }
+    Mod+"Minus" { spawn "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"; }
+    Mod+Shift+"Equal" { spawn "brightnessctl set +5%"; }
+    Mod+Shift+"Minus" { spawn "brightnessctl set 5%-"; }
+
+    // -----------------------------------------------------
+    // --- Screenshots
+    // -----------------------------------------------------
+    "Print" { spawn "hyprshot -m output"; }
+    Shift+"Print" { spawn "hyprshot -m region"; }
+    Ctrl+"Print" { spawn "hyprshot -m window"; }
+    
+    // -----------------------------------------------------
+    // --- [RESERVED] User Navigation
+    // -----------------------------------------------------
+    // [INFO] All directional keys (Arrows, HJKL, U, I) are
+    // intentionally left unbound here to respect user-defined
+    // navigation preferences.
+}

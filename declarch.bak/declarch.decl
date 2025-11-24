@@ -1,0 +1,23 @@
+// ~/.config/declarch/declarch.decl
+
+imports {
+    // 1. The Foundation (Required)
+    "modules/waybridge-core.decl"
+    "modules/shell-ui.decl"
+
+    // 2. The Compositor (Choose one or some compositor you preferred)
+    "modules/hyprland.decl"
+    // "modules/niri.decl"
+    // "modules/sway.decl"
+    // "modules/mango.decl"
+}
+
+// 3. Apps (General packages you want)
+packages {
+    firefox
+    // visual-studio-code-bin
+    thunar
+    // mpv
+    // "flatpak:obsidian"
+    // "flatpak:spotify"
+}

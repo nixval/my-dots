@@ -1,0 +1,48 @@
+// ~/.config/declarch/modules/waybridge-core.decl
+
+packages {
+    // --- Terminal & Tools ---
+    kitty                   // Default terminal
+    yazi                    // File manager (CLI)
+    zsh
+    starship                // Prompt
+    git
+    vim
+    neovim
+
+    // --- Scripting Dependencies (Important!) ---
+    // used for some scripts
+    jq                      // Parsing JSON
+    socat                   // IPC Communication
+    bc                      // math calculation in bash
+    imagemagick             // images manipulation (for lockscreen/screenshot)
+    libnotify               // Command `notify-send`
+
+    // --- Hardware Control ---
+    // used in keybinds.conf for all compositor as default
+    brightnessctl           // Brightness control
+    playerctl               // Media control
+    wireplumber             // Audio session manager
+    pipewire-audio
+    
+    // --- Wayland Utilities ---
+    wl-clipboard            // Clipboard backend
+    cliphist                // Clipboard manager
+    grim                    // Screenshot tool
+    slurp                   // Region selector
+    swappy                  // Screenshot editor
+    hyprpicker              // Color picker (Universal, works on all wlroots)
+    
+    // --- Theming Engine ---
+    matugen-bin             // AUR: Material You generator
+    gnome-themes-extra      // Adwaita dark dependencies
+    qt5ct
+    qt6ct
+    
+    // --- Fonts ---
+    // Required for icons in Waybar/Modules
+    ttf-jetbrains-mono-nerd
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+}

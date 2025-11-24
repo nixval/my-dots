@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+#
+# Hyprland-specific environment variables.
+# These are loaded by UWSM ONLY before starting Hyprland.
+# This is the correct place for HYPR* and AQ_* variables.
+
+# --- Hyprland Debugging ---
+# [ACTION] Uncomment these only if you are debugging Hyprland itself.
+# export HYPRLAND_TRACE=1
+# export HYPRLAND_NO_RT=1
+
+# --- Aquamarine (Renderer) ---
+# [ACTION] Uncomment if you have multiple GPUs (e.g., laptop with Intel+NVIDIA)
+# and need to force Hyprland to use a specific one.
+# Use 'ls /dev/dri/by-path' to find your card paths.
+#
+# Example (forcing Intel iGPU):
+# export AQ_DRM_DEVICES=/dev/dri/by-path/pci-0000:00:02.0-card
+#
+# Example (NVIDIA dGPU primary, Intel fallback):
+# export AQ_DRM_DEVICES=/dev/dri/by-path/pci-0000:01:00.0-card:/dev/dri/by-path/pci-0000:00:02.0-card
+
+# [ACTION] Uncomment this if you have an Intel iGPU and an external monitor
+# connected via a dock, and the monitor is blank.
+# export AQ_NO_MODIFIERS=1

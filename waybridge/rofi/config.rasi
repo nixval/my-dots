@@ -1,0 +1,22 @@
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    icon-theme: "Papirus"; /* fallback icon theme */
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: " 﩯  Window";
+}
+
+@theme "default"
+
+window {
+    width: 30%;
+    border: 2px;
+    border-color: #88ccff;
+    border-radius: 10px;
+    padding: 10px;
+}

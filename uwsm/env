@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+#
+# General environment variables loaded by UWSM for all sessions.
+# This file handles theming, toolkits, cursors, and drivers.
+
+# --- XDG & Toolkit Backends ---
+# [INFO] UWSM should handle XDG_CURRENT_DESKTOP and XDG_SESSION_TYPE automatically.
+# [INFO] Force toolkits to use the Wayland backend. These are universally safe.
+export GDK_BACKEND=wayland,x11,*
+export QT_QPA_PLATFORM=wayland;xcb
+export SDL_VIDEODRIVER=wayland
+
+# --- Theming & Cursors ---
+# [ACTION] Uncomment and set your preferred themes and cursor.
+# export GTK_THEME=MyDarkTheme
+# export QT_QPA_PLATFORMTHEME=qt6ct
+#
+# [INFO] Set XCursor for XWayland apps. This should match your Hyprland cursor theme.
+# export XCURSOR_THEME=Bibata-Modern-Classic
+# export XCURSOR_SIZE=24
+
+# --- HiDPI / Fractional Scaling ---
+# [ACTION] Uncomment if you use a HiDPI (e.g., 4K) monitor with scaling.
+# export QT_AUTO_SCREEN_SCALE_FACTOR=1
+
+# --- Hardware: NVIDIA Specific ---
+# [ACTION] Uncomment these three lines ONLY if you are using NVIDIA proprietary drivers.
+# export LIBVA_DRIVER_NAME=nvidia
+# export __GLX_VENDOR_LIBRARY_NAME=nvidia
+# export GBM_BACKEND=nvidia-drm
+
+# --- Hardware: Intel iGPU ---
+# [ACTION] Uncomment if you are using an Intel iGPU and experience poor performance.
+# export INTEL_GPU_MIN_FREQ_ON_AC=500
+# export INTEL_GPU_MIN_FREQ_ON_BAT=500
+
+# --- App Specific: Electron ---
+# [ACTION] Uncomment to attempt to force Electron apps (Discord, VSCode) to run natively on Wayland.
+# [WARNING] May cause issues with some apps (e.g., Discord binds).
+# export ELECTRON_OZONE_PLATFORM_HINT=auto
+
+# --- UWSM Session Identifier ---
+# [INFO] This variable is crucial.
+# We set it here so our hyprland.conf can use conditional logic
+# to know it's running inside UWSM.
+export USING_UWSM=1

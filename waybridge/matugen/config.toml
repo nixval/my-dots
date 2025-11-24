@@ -1,0 +1,21 @@
+# Matugen Configuration
+# Logic: Maps templates to actual config files.
+
+[config]
+# reload apps automatically? (we handle this in script usually, but true is fine)
+reload_apps = false 
+
+# --- Hyprland Colors ---
+[templates.hyprland]
+input_path = "~/.config/waybridge/matugen/templates/hyprland-colors.conf"
+output_path = "~/.config/hypr/matugen/colors.conf"
+
+# --- Kitty Colors ---
+[templates.kitty]
+input_path = "~/.config/waybridge/matugen/templates/kitty-colors.conf"
+output_path = "~/.config/waybridge/kitty/colors.conf"
+
+# --- Waybar Colors (Optional, css variables) ---
+# [templates.waybar]
+# input_path = "~/.config/waybridge/matugen/templates/waybar-colors.css"
+# output_path = "~/.config/waybridge/waybar/colors.css"

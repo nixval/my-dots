@@ -1,0 +1,19 @@
+// ~/.config/declarch/modules/hyprland.decl
+
+packages {
+    // --- Core ---
+    hyprland
+    xdg-desktop-portal-hyprland // Required for screen share
+    
+    // --- Ecosystem ---
+    hyprlock                // Lockscreen
+    hypridle                // Idle daemon
+    hyprpaper               // Wallpaper engine
+    
+    // --- Auth ---
+    hyprpolkitagent         // Polkit agent
+    
+    // --- Optional / Advanced ---
+    // hyprland-plugins-git
+}
+

@@ -1,0 +1,13 @@
+# -----------------------------------------------------
+# SWAY MAIN CONFIGURATION
+# -----------------------------------------------------
+# This file acts as a loader. It includes modular config 
+# files from the 'config.d' directory in alphanumeric order.
+# -----------------------------------------------------
+
+# 1. Load all modular configurations
+include ~/.config/sway/config.d/*.conf
+
+# 2. Fallback (Optional)
+# If you have system-wide defaults you want to inherit:
+# include /etc/sway/config.d/*

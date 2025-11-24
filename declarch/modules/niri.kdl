@@ -1,0 +1,7 @@
+packages {
+    niri
+    xdg-desktop-portal-gnome 
+    // xwayland-satellite-bin  
+    swaybg                 
+    swaylock-effects-git  
+}
